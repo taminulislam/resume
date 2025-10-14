@@ -141,7 +141,7 @@
     
         <div class="pdf-container">
             <iframe 
-                src="Resume_Taminul.pdf#view=FitH" 
+                src="./Resume_Taminul.pdf#view=FitH" 
                 class="pdf-viewer"
                 title="Resume - Taminul Islam"
             ></iframe>
@@ -153,11 +153,11 @@
         const iframe = document.querySelector('.pdf-viewer');
         
         if (isMobile) {
-            iframe.src = 'Resume_Taminul.pdf#view=FitH&toolbar=1&navpanes=0&scrollbar=1';
+            iframe.src = './Resume_Taminul.pdf#view=FitH&toolbar=1&navpanes=0&scrollbar=1';
         }
 
         iframe.addEventListener('error', function() {
-            window.location.href = 'Resume_Taminul.pdf';
+            window.location.href = './Resume_Taminul.pdf';
         });
     </script>
 </body>
