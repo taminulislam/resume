@@ -60,13 +60,15 @@
             width: 100%;
             position: relative;
             background: #f5f5f5;
-            overflow: hidden;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .pdf-viewer {
             width: 100%;
             height: 100%;
             border: none;
+            overflow: auto;
         }
 
         @media (max-width: 768px) {
@@ -151,9 +153,10 @@
     <script>
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         const iframe = document.querySelector('.pdf-viewer');
-        
+
         if (isMobile) {
-            iframe.src = './Resume_Taminul.pdf#view=FitH&toolbar=1&navpanes=0&scrollbar=1';
+            // For mobile, use FitV (fit vertical) and enable scrolling for all pages
+            iframe.src = './Resume_Taminul.pdf#view=FitV&pagemode=none&scrollbar=1';
         }
 
         iframe.addEventListener('error', function() {
