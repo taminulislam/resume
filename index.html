@@ -152,13 +152,13 @@
 
     <script>
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        const iframe = document.querySelector('.pdf-viewer');
 
+        // Redirect mobile users directly to the PDF for better viewing experience
         if (isMobile) {
-            // For mobile, use FitV (fit vertical) and enable scrolling for all pages
-            iframe.src = './Resume_Taminul.pdf#view=FitV&pagemode=none&scrollbar=1';
+            window.location.href = './Resume_Taminul.pdf';
         }
 
+        const iframe = document.querySelector('.pdf-viewer');
         iframe.addEventListener('error', function() {
             window.location.href = './Resume_Taminul.pdf';
         });
